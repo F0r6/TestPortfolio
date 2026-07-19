@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 140"><rect width="200" height="140" fill="#0a0a0a"/><text x="30" y="78" font-family="Arial" font-size="28" fill="#ff3a58">RB</text></svg></template>
+</head>
+<body>
+<x-dc>
+
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+  @keyframes artFadeIn { from { opacity: 0; transform: translateY(16px) scale(0.96); } to { opacity: 1; transform: translateY(0) scale(1); } }
+  body { margin: 0; background: #0a0a0a; scroll-behavior: smooth; }
+  a { color: #ff3a58; }
+  a:hover { color: #ff6b81; }
+  ::selection { background: #bd002c; color: #fff; }
+</style>
+</helmet>
+
+<div style="--hover-scale: {{ motionScale }}; --hover-speed: {{ motionSpeed }}; font-family: 'Inter', sans-serif; background: #0a0a0a; color: #f2efec; min-height: 100vh; position: relative; overflow-x: hidden;">
+
+  <div style="position: fixed; inset: 0; background-image: url('images/circuit-bg-grey.png'); background-repeat: no-repeat; background-position: center; background-size: cover; opacity: 0.08; mix-blend-mode: screen; pointer-events: none; z-index: 0;"></div>
+
+  <nav style="position: sticky; top: 0; z-index: 40; display: flex; align-items: center; justify-content: space-between; padding: 18px 48px; background: rgba(11,10,12,0.75); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(255,255,255,0.07); box-shadow: 0 8px 24px -8px rgba(0,0,0,0.5);">
+    <a href="#top" style="display: flex; align-items: center;">
+      <img src="images/LogoSolo.png" alt="Ruairidh Booth logo" style="height: 34px; width: auto;">
+    </a>
+    <div style="display: flex; align-items: center; gap: 36px;">
+      <a href="#top" style="font-size: 14px; font-weight: 500; text-decoration: none; color: #cfcac4;" style-hover="color: #ff3a58;">Home</a>
+      <a href="#about" style="font-size: 14px; font-weight: 500; text-decoration: none; color: #cfcac4;" style-hover="color: #ff3a58;">About Me</a>
+      <a href="#work" style="font-size: 14px; font-weight: 500; text-decoration: none; color: #cfcac4;" style-hover="color: #ff3a58;">Portfolio</a>
+      <a href="#" onClick="{{ openArt }}" style="font-size: 14px; font-weight: 500; text-decoration: none; color: #cfcac4;" style-hover="color: #ff3a58;">Art Portfolio</a>
+      <a href="#contact" style="font-size: 14px; font-weight: 700; text-decoration: none; color: #f2efec; border-bottom: 2px solid #bd002c; padding-bottom: 4px;" style-hover="color: #ff3a58;">Contact</a>
+    </div>
+  </nav>
+
+  <section id="top" style="min-height: 82vh; display: flex; align-items: center; padding: 0 48px; position: relative;">
+    <sc-if value="{{ isGridHero }}" hint-placeholder-val="{{ true }}">
+      <div style="position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px); background-size: 56px 56px; mask-image: radial-gradient(ellipse 70% 60% at 30% 40%, black 30%, transparent 75%); pointer-events: none;"></div>
+    </sc-if>
+    <sc-if value="{{ isScanlineHero }}" hint-placeholder-val="{{ false }}">
+      <div style="position: absolute; inset: 0; background-image: repeating-linear-gradient(0deg, rgba(255,255,255,0.03) 0px, rgba(255,255,255,0.03) 1px, transparent 1px, transparent 4px); mask-image: radial-gradient(ellipse 70% 60% at 30% 40%, black 30%, transparent 75%); pointer-events: none;"></div>
+    </sc-if>
+    <div style="max-width: 780px; margin: 0 auto; text-align: center; position: relative; z-index: 1;">
+      <p style="text-transform: uppercase; letter-spacing: 5px; font-size: 14px; font-weight: 600; color: #ff3a58; margin: 0 0 18px;">Hi, I'm Ruairidh Booth</p>
+      <h1 style="font-family: 'Bebas Neue', sans-serif; font-size: clamp(48px, 7vw, 92px); line-height: 1; margin: 0 0 28px; text-transform: none;">
+        Gameplay Programmer<br>Based in Dundee.
+      </h1>
+      <p style="font-size: 18px; line-height: 1.7; color: #cfcac4; max-width: 620px; margin: 0 auto 40px;">
+        I turn creative ideas into gameplay mechanics, creating immersive experiences and engaging players as much as possible in the digital world.
+      </p>
+      <a href="#work" style="text-decoration: none; font-weight: 600; font-size: 15px; color: #fff; background: linear-gradient(180deg, #d81440, #a8001f); padding: 16px 32px; border-radius: 999px; display: inline-block; box-shadow: 0 14px 30px -8px rgba(189,0,44,0.55), inset 0 1px 0 rgba(255,255,255,0.2); transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.2s;" style-hover="background: #ff3a58; transform: scale(var(--hover-scale));" style-active="transform: scale(0.94); box-shadow: 0 6px 14px -6px rgba(189,0,44,0.5), inset 0 1px 0 rgba(255,255,255,0.15);">View My Projects Here →</a>
+    </div>
+  </section>
+
+  <div style="padding: 0 48px 80px; position: relative;">
+    <div style="border: 1px solid rgba(255,255,255,0.25); border-radius: 40px; background: linear-gradient(180deg, rgba(46,46,50,1), rgba(30,30,33,1)); box-shadow: 0 30px 70px -20px rgba(0,0,0,0.65), 0 12px 90px rgba(176,16,46,0.18), inset 0 1px 0 rgba(255,255,255,0.12); padding: 80px 56px;">
+
+      <section id="about">
+        <div style="text-align: center; margin: 0 0 56px;">
+          <h2 style="font-family: 'Bebas Neue', sans-serif; font-size: 42px; margin: 0; text-transform: none;">About Me<span style="color: #ff3a58;">.</span></h2>
+        </div>
+
+        <div style="max-width: 900px; margin: 0 auto 20px; padding: 30px 36px; border-radius: 12px; background: linear-gradient(160deg, rgba(255,255,255,0.05), rgba(255,255,255,0.015)); border: 1px solid rgba(255,255,255,0.1); border-left: 3px solid #ff3a58; box-shadow: 0 16px 32px -14px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.06);">
+          <div style="display: flex; align-items: baseline; gap: 12px; margin: 0 0 12px; flex-wrap: wrap;">
+            <span style="font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #ff3a58;">Award — July 2026</span>
+          </div>
+          <h3 style="font-size: 20px; font-weight: 700; margin: 0 0 12px;">Honorary Fellows Prize for Innovation — Abertay University</h3>
+          <p style="font-size: 15px; line-height: 1.75; color: #a49f98; margin: 0; max-width: 700px;">Awarded the Honorary Fellows Prize for Innovation at my graduation from Abertay University, for the most innovative Honours Project — recognising my work on "Emotion-Based Gaming".</p>
+        </div>
+
+        <div style="max-width: 900px; margin: 0 auto 56px; padding: 30px 36px; border-radius: 12px; background: linear-gradient(160deg, rgba(255,255,255,0.05), rgba(255,255,255,0.015)); border: 1px solid rgba(255,255,255,0.1); border-left: 3px solid #ff3a58; box-shadow: 0 16px 32px -14px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.06);">
+          <div style="display: flex; align-items: baseline; gap: 12px; margin: 0 0 12px; flex-wrap: wrap;">
+            <span style="font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #ff3a58;">Award — May 2026</span>
+          </div>
+          <h3 style="font-size: 20px; font-weight: 700; margin: 0 0 12px;">Technical Innovation Award — Abertay University</h3>
+          <p style="font-size: 15px; line-height: 1.75; color: #a49f98; margin: 0; max-width: 700px;">During Abertay University's 2026 Digital Graduate Showcase, I was honoured to receive the Technical Innovation Award from Pocket Sized Hands for my Honours Project, "Emotion-Based Gaming" — recognising my work integrating emotional responses into gameplay mechanics for a more immersive, personalised experience.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: minmax(280px, 1.2fr) minmax(240px, 1fr); gap: 64px; margin-bottom: 56px;">
+          <div>
+            <h3 style="font-size: 20px; font-weight: 700; margin: 0 0 28px;">Experience &amp; Education<span style="color: #ff3a58;">.</span></h3>
+            <div style="position: relative; padding-left: 24px;">
+              <div style="position: absolute; left: 5px; top: 6px; bottom: 6px; width: 2px; background: rgba(255,255,255,0.12);"></div>
+              <sc-for list="{{ timeline }}" as="t" hint-placeholder-count="3">
+                <div style="position: relative; margin-bottom: 30px; padding: 6px 12px 6px 0; border-radius: 10px; transition: transform 0.25s ease, background 0.25s ease;" style-hover="transform: translateX(6px); background: rgba(255,255,255,0.03);">
+                  <span style="position: absolute; left: -24px; top: 10px; width: 10px; height: 10px; border-radius: 50%; background: #ff3a58; transition: transform 0.25s ease, box-shadow 0.25s ease;" style-hover="transform: scale(1.4); box-shadow: 0 0 0 5px rgba(255,58,88,0.2);"></span>
+                  <p style="font-size: 13px; font-weight: 700; color: #ff3a58; margin: 0 0 6px;">{{ t.period }}</p>
+                  <h4 style="font-size: 17px; font-weight: 700; margin: 0 0 8px;">{{ t.title }}</h4>
+                  <p style="font-size: 14.5px; line-height: 1.7; color: #a49f98; margin: 0;">{{ t.desc }}</p>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+          <div>
+            <h3 style="font-size: 20px; font-weight: 700; margin: 0 0 28px;">Core Skills<span style="color: #ff3a58;">.</span></h3>
+            <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+              <sc-for list="{{ skills }}" as="s" hint-placeholder-count="7">
+                <span style="font-size: 13.5px; font-weight: 500; padding: 9px 16px; border-radius: 999px; background: linear-gradient(160deg, rgba(255,255,255,0.09), rgba(255,255,255,0.02)); border: 1px solid rgba(255,255,255,0.14); color: #e7e3de; box-shadow: 0 6px 14px -8px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.08);">{{ s }}</span>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h3 style="font-size: 20px; font-weight: 700; margin: 0 0 24px;">Interests<span style="color: #ff3a58;">.</span></h3>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px;">
+            <div style="border-radius: 12px; overflow: hidden; background: linear-gradient(160deg, rgba(255,255,255,0.05), rgba(255,255,255,0.015)); border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 16px 30px -16px rgba(0,0,0,0.6); transition: transform 0.25s, box-shadow 0.25s;" style-hover="transform: translateY(-6px); box-shadow: 0 22px 40px -16px rgba(0,0,0,0.7);">
+              <div style="background: linear-gradient(120deg,#bd002c,#ff3a58); padding: 16px 20px;">
+                <h4 style="font-size: 16px; font-weight: 800; margin: 0; color: #fff;">Game Psychology</h4>
+              </div>
+              <p style="font-size: 14px; line-height: 1.6; color: #a49f98; margin: 0; padding: 16px 20px;">Understanding why and how gamers respond to certain games.</p>
+            </div>
+            <div style="border-radius: 12px; overflow: hidden; background: linear-gradient(160deg, rgba(255,255,255,0.05), rgba(255,255,255,0.015)); border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 16px 30px -16px rgba(0,0,0,0.6); transition: transform 0.25s, box-shadow 0.25s;" style-hover="transform: translateY(-6px); box-shadow: 0 22px 40px -16px rgba(0,0,0,0.7);">
+              <div style="background: linear-gradient(120deg,#bd002c,#ff3a58); padding: 16px 20px;">
+                <h4 style="font-size: 16px; font-weight: 800; margin: 0; color: #fff;">VR Simulation</h4>
+              </div>
+              <p style="font-size: 14px; line-height: 1.6; color: #a49f98; margin: 0; padding: 16px 20px;">Exploring immersive, physics-driven experiences in virtual reality.</p>
+            </div>
+            <div style="border-radius: 12px; overflow: hidden; background: linear-gradient(160deg, rgba(255,255,255,0.05), rgba(255,255,255,0.015)); border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 16px 30px -16px rgba(0,0,0,0.6); transition: transform 0.25s, box-shadow 0.25s;" style-hover="transform: translateY(-6px); box-shadow: 0 22px 40px -16px rgba(0,0,0,0.7);">
+              <div style="background: linear-gradient(120deg,#bd002c,#ff3a58); padding: 16px 20px;">
+                <h4 style="font-size: 16px; font-weight: 800; margin: 0; color: #fff;">3D Modelling</h4>
+              </div>
+              <p style="font-size: 14px; line-height: 1.6; color: #a49f98; margin: 0; padding: 16px 20px;">Therapeutic modelling to bring my own visual ideas to life in detail.</p>
+            </div>
+            <div style="border-radius: 12px; overflow: hidden; background: linear-gradient(160deg, rgba(255,255,255,0.05), rgba(255,255,255,0.015)); border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 16px 30px -16px rgba(0,0,0,0.6); transition: transform 0.25s, box-shadow 0.25s;" style-hover="transform: translateY(-6px); box-shadow: 0 22px 40px -16px rgba(0,0,0,0.7);">
+              <div style="background: linear-gradient(120deg,#bd002c,#ff3a58); padding: 16px 20px;">
+                <h4 style="font-size: 16px; font-weight: 800; margin: 0; color: #fff;">Game Audio</h4>
+              </div>
+              <p style="font-size: 14px; line-height: 1.6; color: #a49f98; margin: 0; padding: 16px 20px;">Sound design and adaptive music that react to what's happening on screen.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="work" style="margin-top: 96px;">
+        <div style="text-align: center; max-width: 620px; margin: 0 auto 48px;">
+          <h2 style="font-family: 'Bebas Neue', sans-serif; font-size: 44px; margin: 0 0 14px; text-transform: none;">My Projects<span style="color: #ff3a58;">.</span></h2>
+          <p style="font-size: 15px; color: #a49f98; margin: 0;">Here's a showcase of some of my favourite projects. More to come...</p>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 28px;">
+          <sc-for list="{{ projects }}" as="p" hint-placeholder-count="3">
+            <div onClick="{{ openProject }}" data-id="{{ p.id }}" style="cursor: pointer; border-radius: 16px; overflow: hidden; background: linear-gradient(160deg, #1a171e, #100e12); border: 1px solid rgba(255,255,255,0.08); display: flex; flex-direction: column; box-shadow: 0 24px 48px -18px rgba(0,0,0,0.75), inset 0 1px 0 rgba(255,255,255,0.05); transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;" style-hover="border-color: rgba(255,58,88,0.4); transform: translateY(-6px); box-shadow: 0 32px 60px -18px rgba(0,0,0,0.85), inset 0 1px 0 rgba(255,255,255,0.08);">
+              <div style="aspect-ratio: 16/10; overflow: hidden; position: relative; background: #1a1720;">
+                <img src="{{ p.cover }}" alt="{{ p.title }}" style="width: 100%; height: 100%; object-fit: cover; transition: transform var(--hover-speed);" style-hover="transform: scale(var(--hover-scale));">
+                <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(11,10,12,0.92), rgba(11,10,12,0.15) 45%, transparent 70%); pointer-events: none;"></div>
+                <div style="position: absolute; inset: 0; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.06); pointer-events: none;"></div>
+                <span style="position: absolute; left: 18px; bottom: 16px; text-transform: uppercase; letter-spacing: 1.5px; font-size: 11px; font-weight: 700; color: #ff3a58; background: rgba(11,10,12,0.55); backdrop-filter: blur(6px); padding: 6px 12px; border-radius: 999px; border: 1px solid rgba(255,58,88,0.3);">{{ p.tag }}</span>
+              </div>
+              <div style="padding: 22px 24px 26px;">
+                <h3 style="font-size: 21px; font-weight: 700; margin: 0 0 10px;">{{ p.title }}</h3>
+                <p style="font-size: 14.5px; line-height: 1.6; color: #a49f98; margin: 0 0 14px;">{{ p.blurb }}</p>
+                <span style="font-size: 14px; font-weight: 600; color: #f2efec;">Read case study →</span>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </section>
+
+      <sc-if value="{{ showGameJams }}" hint-placeholder-val="{{ true }}">
+        <section style="margin-top: 96px;">
+          <div style="text-align: center; margin: 0 auto 40px;">
+            <h2 style="font-family: 'Bebas Neue', sans-serif; font-size: 38px; margin: 0; text-transform: none;">Game Jams<span style="color: #ff3a58;">.</span></h2>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 22px;">
+            <sc-for list="{{ jams }}" as="j" hint-placeholder-count="3">
+              <a href="{{ j.link }}" target="_blank" style="text-decoration: none; color: inherit; border-radius: 12px; overflow: hidden; background: linear-gradient(160deg, #1a171e, #100e12); border: 1px solid rgba(255,255,255,0.08); display: block; box-shadow: 0 18px 34px -16px rgba(0,0,0,0.7); transition: border-color 0.25s, transform 0.25s;" style-hover="border-color: rgba(255,58,88,0.4); transform: translateY(-5px);">
+                <div style="aspect-ratio: 4/3; overflow: hidden;">
+                  <img src="{{ j.cover }}" alt="{{ j.title }}" style="width: 100%; height: 100%; object-fit: cover; transition: transform var(--hover-speed);" style-hover="transform: scale(var(--hover-scale));">
+                </div>
+                <div style="padding: 18px 20px;">
+                  <p style="text-transform: uppercase; letter-spacing: 1.5px; font-size: 11px; font-weight: 700; color: #ff3a58; margin: 0 0 6px;">{{ j.engine }}</p>
+                  <h4 style="font-size: 17px; font-weight: 700; margin: 0 0 4px;">{{ j.title }}</h4>
+                  <p style="font-size: 13px; color: #a49f98; margin: 0;">{{ j.event }}</p>
+                </div>
+              </a>
+            </sc-for>
+          </div>
+        </section>
+      </sc-if>
+
+    </div>
+  </div>
+
+  <section id="contact" style="padding: 100px 48px; text-align: center; position: relative; overflow: hidden;">
+    <div style="position: absolute; top: -20%; left: 50%; transform: translateX(-50%); width: 700px; height: 400px; background: radial-gradient(circle, rgba(189,0,44,0.22), transparent 70%); pointer-events: none;"></div>
+    <h2 style="font-family: 'Bebas Neue', sans-serif; font-size: clamp(32px, 5vw, 52px); margin: 0 0 28px; text-transform: none; position: relative;">Let's collaborate &amp; create<span style="color: #ff3a58;">.</span></h2>
+    <a href="mailto:ruairidh.booth@gmail.com" style="font-size: 20px; font-weight: 600; text-decoration: none; color: #f2efec; position: relative;" style-hover="color: #ff3a58;">ruairidh.booth@gmail.com</a>
+  </section>
+
+  <footer style="padding: 40px 48px 30px; text-align: center; border-top: 1px solid rgba(255,255,255,0.07);">
+    <img src="images/LogoSolo.png" alt="Ruairidh Booth logo" style="height: 30px; margin-bottom: 24px;">
+    <div style="display: flex; justify-content: center; gap: 28px; margin-bottom: 24px;">
+      <a href="https://www.linkedin.com/in/ruairidhbooth" target="_blank" style="font-size: 14px; font-weight: 600; text-decoration: none; color: #cfcac4;" style-hover="color: #ff3a58;">LinkedIn</a>
+      <a href="mailto:ruairidh.booth@gmail.com" style="font-size: 14px; font-weight: 600; text-decoration: none; color: #cfcac4;" style-hover="color: #ff3a58;">Email</a>
+      <a href="https://github.com/F0r6" target="_blank" style="font-size: 14px; font-weight: 600; text-decoration: none; color: #cfcac4;" style-hover="color: #ff3a58;">GitHub</a>
+    </div>
+    <p style="font-size: 13px; color: #6f6a65; margin: 0;">© 2026 Ruairidh Booth.</p>
+  </footer>
+
+  <sc-if value="{{ showArt }}" hint-placeholder-val="{{ false }}">
+    <div style="position: fixed; inset: 0; z-index: 100; background: #161616; overflow-y: auto;">
+      <div style="position: fixed; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px); background-size: 56px 56px; mask-image: radial-gradient(ellipse 70% 60% at 30% 40%, black 30%, transparent 75%); pointer-events: none;"></div>
+      <div style="position: fixed; top: 12%; right: 6%; width: 480px; height: 480px; background: radial-gradient(circle, rgba(189,0,44,0.28), transparent 70%); filter: blur(20px); pointer-events: none;"></div>
+      <nav style="position: sticky; top: 0; z-index: 5; display: flex; align-items: center; justify-content: space-between; padding: 18px 48px; background: rgba(11,10,12,0.85); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(255,255,255,0.07);">
+        <button onClick="{{ closeArt }}" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.2); color: #f2efec; font-size: 14px; font-weight: 600; padding: 10px 20px; border-radius: 999px; cursor: pointer; font-family: inherit; box-shadow: 0 6px 16px -8px rgba(0,0,0,0.6);" style-hover="border-color: #ff3a58; color: #ff3a58;">← Back to Home</button>
+        <img src="images/LogoSolo.png" alt="Ruairidh Booth logo" style="height: 28px;">
+      </nav>
+
+      <div style="padding: 40px 48px 80px; position: relative;">
+      <div style="max-width: 1100px; margin: 0 auto; padding: 64px 56px; text-align: center; border: 1px solid rgba(255,255,255,0.25); border-radius: 40px; background: linear-gradient(180deg, rgba(46,46,50,1), rgba(30,30,33,1)); box-shadow: 0 30px 70px -20px rgba(0,0,0,0.65), 0 12px 90px rgba(176,16,46,0.18), inset 0 1px 0 rgba(255,255,255,0.12);">
+        <p style="text-transform: uppercase; letter-spacing: 1.5px; font-size: 13px; font-weight: 700; color: #ff3a58; margin: 0 0 14px;">Home / Art Portfolio</p>
+        <h1 style="font-family: 'Bebas Neue', sans-serif; font-size: clamp(38px, 6vw, 64px); margin: 0 0 16px; text-transform: none;">Art Portfolio</h1>
+        <p style="font-size: 16px; color: #a49f98; margin: 0 0 40px;">Here is a showcase of my favourite projects.</p>
+
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 0 0 48px;">
+          <sc-for list="{{ artFilters }}" as="f" hint-placeholder-count="7">
+            <button onClick="{{ setArtFilter }}" data-filter="{{ f }}" style="border: none; font-size: 13px; font-weight: 600; padding: 10px 22px; border-radius: 999px; cursor: pointer; font-family: inherit; background: linear-gradient(160deg, #4a424f, #3a3340); color: #f2efec; box-shadow: 0 8px 16px -8px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.08); transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;" style-hover="background: linear-gradient(90deg,#bd002c,#ff3a58); transform: translateY(-3px); box-shadow: 0 12px 22px -10px rgba(189,0,44,0.5);" style-active="transform: scale(0.93);">{{ f }}</button>
+          </sc-for>
+        </div>
+
+        <div key="{{ artFilter }}" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; text-align: left;">
+          <sc-for list="{{ filteredArt }}" as="a" hint-placeholder-count="8">
+            <figure style="margin: 0; cursor: pointer; transition: transform 0.3s ease; animation: artFadeIn 0.5s ease both;" onClick="{{ openLightbox }}" data-index="{{ $index }}" style-hover="transform: translateY(-6px);">
+              <div style="aspect-ratio: 1; border-radius: 10px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 16px 30px -16px rgba(0,0,0,0.65); transition: box-shadow 0.3s ease, border-color 0.3s ease;" style-hover="box-shadow: 0 26px 44px -16px rgba(0,0,0,0.75); border-color: rgba(255,58,88,0.4);">
+                <sc-if value="{{ a.video }}" hint-placeholder-val="{{ false }}">
+                  <video src="{{ a.video }}" autoplay loop muted playsinline style="width: 100%; height: 100%; object-fit: cover;"></video>
+                </sc-if>
+                <sc-if value="{{ a.src }}" hint-placeholder-val="{{ true }}">
+                  <img src="{{ a.src }}" alt="{{ a.title }}" style="width: 100%; height: 100%; object-fit: cover; transition: transform var(--hover-speed);" style-hover="transform: scale(var(--hover-scale));">
+                </sc-if>
+              </div>
+              <figcaption style="font-size: 12px; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; color: #ff3a58; margin: 10px 0 0;">{{ a.cat }}</figcaption>
+              <p style="font-size: 14px; color: #cfcac4; margin: 4px 0 0;">{{ a.title }}</p>
+            </figure>
+          </sc-for>
+        </div>
+      </div>
+      </div>
+
+      <footer style="padding: 40px 48px 30px; text-align: center; border-top: 1px solid rgba(255,255,255,0.07);">
+        <img src="images/LogoSolo.png" alt="Ruairidh Booth logo" style="height: 30px; margin-bottom: 24px;">
+        <div style="display: flex; justify-content: center; gap: 28px; margin-bottom: 24px;">
+          <a href="https://www.linkedin.com/in/ruairidhbooth" target="_blank" style="font-size: 14px; font-weight: 600; text-decoration: none; color: #cfcac4;" style-hover="color: #ff3a58;">LinkedIn</a>
+          <a href="mailto:ruairidh.booth@gmail.com" style="font-size: 14px; font-weight: 600; text-decoration: none; color: #cfcac4;" style-hover="color: #ff3a58;">Email</a>
+          <a href="https://github.com/F0r6" target="_blank" style="font-size: 14px; font-weight: 600; text-decoration: none; color: #cfcac4;" style-hover="color: #ff3a58;">GitHub</a>
+        </div>
+        <p style="font-size: 13px; color: #6f6a65; margin: 0;">© 2026 Ruairidh Booth.</p>
+      </footer>
+
+      <sc-if value="{{ lightboxImage }}" hint-placeholder-val="{{ false }}">
+        <div onClick="{{ closeLightbox }}" style="position: fixed; inset: 0; z-index: 200; background: rgba(0,0,0,0.9); display: flex; align-items: center; justify-content: center; padding: 40px; cursor: zoom-out;">
+          <button onClick="{{ closeLightbox }}" style="position: absolute; top: 24px; right: 32px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.3); color: #fff; font-size: 20px; width: 40px; height: 40px; border-radius: 999px; cursor: pointer; box-shadow: 0 8px 20px -8px rgba(0,0,0,0.6);">✕</button>
+          <button onClick="{{ prevImage }}" style="position: absolute; top: 50%; left: 24px; transform: translateY(-50%); background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.3); color: #fff; font-size: 22px; width: 48px; height: 48px; border-radius: 999px; cursor: pointer; box-shadow: 0 8px 20px -8px rgba(0,0,0,0.6);" style-hover="border-color: #ff3a58; color: #ff3a58;">←</button>
+          <button onClick="{{ nextImage }}" style="position: absolute; top: 50%; right: 24px; transform: translateY(-50%); background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.3); color: #fff; font-size: 22px; width: 48px; height: 48px; border-radius: 999px; cursor: pointer; box-shadow: 0 8px 20px -8px rgba(0,0,0,0.6);" style-hover="border-color: #ff3a58; color: #ff3a58;">→</button>
+          <figure onClick="{{ stopPropagation }}" style="margin: 0; max-width: 90vw; max-height: 85vh; text-align: center;">
+            <sc-if value="{{ lightboxImage.video }}" hint-placeholder-val="{{ false }}">
+              <video src="{{ lightboxImage.video }}" autoplay loop muted playsinline controls style="max-width: 90vw; max-height: 75vh; border-radius: 8px;"></video>
+            </sc-if>
+            <sc-if value="{{ lightboxImage.src }}" hint-placeholder-val="{{ true }}">
+              <img src="{{ lightboxImage.src }}" alt="{{ lightboxImage.title }}" style="max-width: 90vw; max-height: 75vh; object-fit: contain; border-radius: 8px;">
+            </sc-if>
+            <figcaption style="color: #cfcac4; font-size: 15px; margin-top: 18px;">{{ lightboxImage.title }}</figcaption>
+          </figure>
+        </div>
+      </sc-if>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ activeProject }}" hint-placeholder-val="{{ false }}">
+    <div style="position: fixed; inset: 0; z-index: 100; background: #161616; overflow-y: auto;">
+      <div style="position: fixed; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px); background-size: 56px 56px; mask-image: radial-gradient(ellipse 70% 60% at 30% 40%, black 30%, transparent 75%); pointer-events: none;"></div>
+      <div style="position: fixed; top: 12%; right: 6%; width: 480px; height: 480px; background: radial-gradient(circle, rgba(189,0,44,0.28), transparent 70%); filter: blur(20px); pointer-events: none;"></div>
+      <nav style="position: sticky; top: 0; z-index: 5; display: flex; align-items: center; justify-content: space-between; padding: 18px 48px; background: rgba(11,10,12,0.85); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(255,255,255,0.07);">
+        <button onClick="{{ closeProject }}" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.2); color: #f2efec; font-size: 14px; font-weight: 600; padding: 10px 20px; border-radius: 999px; cursor: pointer; font-family: inherit; box-shadow: 0 6px 16px -8px rgba(0,0,0,0.6);" style-hover="border-color: #ff3a58; color: #ff3a58;">← Back to Work</button>
+        <img src="images/LogoSolo.png" alt="Ruairidh Booth logo" style="height: 28px;">
+      </nav>
+
+      <div style="padding: 40px 48px 80px; position: relative;">
+      <div style="max-width: 900px; margin: 0 auto; padding: 64px 56px; border: 1px solid rgba(255,255,255,0.25); border-radius: 40px; background: linear-gradient(180deg, rgba(46,46,50,1), rgba(30,30,33,1)); box-shadow: 0 30px 70px -20px rgba(0,0,0,0.65), 0 12px 90px rgba(176,16,46,0.18), inset 0 1px 0 rgba(255,255,255,0.12);">
+        <p style="text-transform: uppercase; letter-spacing: 1.5px; font-size: 13px; font-weight: 700; color: #ff3a58; margin: 0 0 14px;">{{ activeProject.tag }}</p>
+        <h1 style="font-family: 'Bebas Neue', sans-serif; font-size: clamp(38px, 6vw, 64px); margin: 0 0 28px; text-transform: none;">{{ activeProject.title }}</h1>
+
+        <div style="border-radius: 12px; overflow: hidden; margin: 0 0 40px; background: rgba(0,0,0,0.3); box-shadow: 0 24px 48px -20px rgba(0,0,0,0.7), inset 0 1px 0 rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.06);">
+          <img src="{{ activeProject.cover }}" alt="{{ activeProject.title }}" style="width: 100%; max-height: 70vh; object-fit: contain; display: block; margin: 0 auto;">
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 24px; padding: 24px; border-radius: 14px; background: linear-gradient(160deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01)); box-shadow: inset 0 1px 0 rgba(255,255,255,0.06), 0 14px 26px -16px rgba(0,0,0,0.5); margin: 0 0 40px;">
+          <div>
+            <p style="font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #7a756f; margin: 0 0 6px;">Role</p>
+            <p style="font-size: 15px; margin: 0; color: #e7e3de;">{{ activeProject.role }}</p>
+          </div>
+          <div>
+            <p style="font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #7a756f; margin: 0 0 6px;">Tools</p>
+            <p style="font-size: 15px; margin: 0; color: #e7e3de;">{{ activeProject.tools }}</p>
+          </div>
+          <sc-if value="{{ activeProject.link }}" hint-placeholder-val="{{ false }}">
+            <div>
+              <p style="font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #7a756f; margin: 0 0 6px;">Play It</p>
+              <a href="{{ activeProject.link }}" target="_blank" style="font-size: 15px; color: #ff3a58;">{{ activeProject.linkLabel }}</a>
+            </div>
+          </sc-if>
+        </div>
+
+        <p style="font-size: 17px; line-height: 1.85; color: #cfcac4; margin: 0 0 40px;">{{ activeProject.description }}</p>
+
+        <sc-if value="{{ activeProject.contributions }}" hint-placeholder-val="{{ false }}">
+          <h3 style="font-size: 20px; font-weight: 700; margin: 0 0 20px;">My Contributions</h3>
+          <div style="display: flex; flex-direction: column; gap: 18px; margin: 0 0 48px;">
+            <sc-for list="{{ activeProject.contributions }}" as="c" hint-placeholder-count="4">
+              <div style="padding: 14px 18px; border-left: 2px solid rgba(255,58,88,0.4); border-radius: 8px; background: linear-gradient(160deg, rgba(255,255,255,0.035), rgba(255,255,255,0.005)); box-shadow: 0 10px 22px -16px rgba(0,0,0,0.5);">
+                <span style="font-weight: 700; color: #f2efec;">{{ c.label }}</span>
+                <span style="color: #a49f98;"> — {{ c.text }}</span>
+              </div>
+            </sc-for>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ activeProject.gallery }}" hint-placeholder-val="{{ false }}">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin: 0 0 48px;">
+            <sc-for list="{{ activeProject.gallery }}" as="g" hint-placeholder-count="2">
+              <figure style="margin: 0;">
+                <div style="border-radius: 12px; overflow: hidden; background: rgba(0,0,0,0.3); box-shadow: 0 18px 34px -18px rgba(0,0,0,0.65); border: 1px solid rgba(255,255,255,0.06);">
+                  <img src="{{ g.src }}" alt="{{ g.caption }}" style="width: 100%; object-fit: contain; display: block;">
+                </div>
+                <figcaption style="font-size: 13px; color: #7a756f; margin-top: 10px;">{{ g.caption }}</figcaption>
+              </figure>
+            </sc-for>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ activeProject.video }}" hint-placeholder-val="{{ false }}">
+          <div style="aspect-ratio: 16/9; border-radius: 12px; overflow: hidden; margin: 0 0 48px; box-shadow: 0 24px 48px -20px rgba(0,0,0,0.7); border: 1px solid rgba(255,255,255,0.06);">
+            <iframe src="{{ activeProject.video }}" title="Project demo" style="width: 100%; height: 100%; border: none;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ activeProject.learned }}" hint-placeholder-val="{{ false }}">
+          <h3 style="font-size: 20px; font-weight: 700; margin: 0 0 16px;">What I Learned</h3>
+          <p style="font-size: 16px; line-height: 1.85; color: #cfcac4; margin: 0;">{{ activeProject.learned }}</p>
+        </sc-if>
+      </div>
+      </div>
+    </div>
+  </sc-if>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;motionIntensity&quot;: {&quot;editor&quot;: &quot;enum&quot;, &quot;default&quot;: &quot;standard&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;options&quot;: [&quot;minimal&quot;, &quot;standard&quot;, &quot;bold&quot;], &quot;section&quot;: &quot;Interaction&quot;}, &quot;showGameJams&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Content&quot;}, &quot;heroStyle&quot;: {&quot;editor&quot;: &quot;enum&quot;, &quot;default&quot;: &quot;grid&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;options&quot;: [&quot;grid&quot;, &quot;scanlines&quot;], &quot;section&quot;: &quot;Visuals&quot;}}">
+
+class Component extends DCLogic {
+  state = { activeId: null, showArt: false, artFilter: 'All', lightboxIndex: null };
+
+  projects = [
+    {
+      id: 'hons', tag: 'Unreal Engine · Honours Project', title: 'Emotion-Based Gaming',
+      blurb: 'An emotion tracker that adapts a game environment in real time to how the player is feeling.',
+      cover: 'images/HonsMain.png', role: 'Solo Developer', tools: 'Unreal Engine, Python, OpenCV, MediaPipe',
+      description: "This prototype explores how real-time emotion recognition can drive environmental and atmospheric changes in games. The player moves through a rough forest, exploring adaptive effects driven by their own facial expressions. Smile and sustain it, and the environment turns vibrant and lively; look sad, and the sky darkens as rain falls with ambient, melancholic music. The emotion processing happens outside Unreal through a facial tracker application I built in Python using OpenCV and MediaPipe — it calibrates a neutral expression, then tracks facial landmarks through Facial Action Coding System (FACS) conditions to determine the player's emotional state. The project won the Technical Innovation Award at Abertay's 2026 Digital Graduate Showcase.",
+      gallery: [
+        { src: 'images/honsSun.png', caption: 'Happy — vibrant, sunlit changes' },
+        { src: 'images/honsAsh.png', caption: 'Angry — ash and haze' },
+        { src: 'images/honsRain.png', caption: 'Sad — rain and dimmed light' }
+      ],
+      video: 'https://www.youtube.com/embed/PAqoWQJIaGg'
+    },
+    {
+      id: 'contrary-motion', tag: 'Unreal Engine · Hellcat Games', title: 'Contrary Motion',
+      blurb: "A funky co-op puzzle shooter built with a team of 8 under industry mentorship at 4J Studios.",
+      cover: 'images/ContraryMotion.png', role: 'Gameplay Programmer', tools: 'Unreal Engine, Perforce',
+      link: 'https://hellcatgames.itch.io/contrary-motion', linkLabel: 'hellcatgames.itch.io',
+      description: 'Contrary Motion is a funky, stylised co-op puzzle shooter developed by a team of 8 at Abertay University, mentored by industry professionals at 4J Studios. Playing as "funky bandits," two players cooperate to fight through hordes of enemies and solve physics-based puzzles for score. Each player wields a push or pull ability — picking up and throwing objects, enemies, or each other — building a mechanic entirely around player synergy.',
+      contributions: [
+        { label: 'Combat Systems', text: 'designed and implemented the core combat loop, including player weapons, ammo, hit detection, and enemy response to damage.' },
+        { label: 'Abilities', text: 'built the push and pull ability system central to the game, handling physics interactions between players and objects.' },
+        { label: 'Interactable Objects', text: 'programmed manipulable objects — explosive barrels, electrical traps, puzzles — keeping physics consistent across combat and puzzle scenarios.' },
+        { label: 'Player Animations', text: 'set up animation states and transitions between movement, combat, ability, and idle.' },
+        { label: 'Score System', text: 'co-developed scoring that tracks and multiplies score across combat and puzzle completion.' },
+        { label: 'Source Control', text: "set up and managed the team's Perforce repository, running version control for a team of 8." }
+      ],
+      gallery: [
+        { src: 'images/ContraryMotion.jpg', caption: 'City Area' },
+        { src: 'images/ContraryMotion2.jpg', caption: 'Crane Puzzles' },
+        { src: 'images/ContraryMotion1.jpg', caption: 'Rooftops' }
+      ],
+      learned: "Working in a team of 8 taught me a great deal about professional communication and splitting work across a large group without stepping on each other's progress. Running the Perforce repository put me at the centre of that — resolving merge conflicts and keeping the codebase clean under pressure gave me a much stronger grip on source control in a real production environment. QA testing ended up being a bigger part of the process than I expected — structured playtests surfaced issues that weren't obvious during development, and acting on that feedback directly shaped how several mechanics ended up working in the final build."
+    },
+    {
+      id: 'aot', tag: 'Unreal Engine · Systems Project', title: 'Attack on Titan — Grappling System',
+      blurb: 'A physics-based twin-rope grappling and swinging mechanic inspired by Attack on Titan.',
+      cover: 'images/grapple.png', role: 'Solo Developer', tools: 'Unreal Engine',
+      description: 'This project focused on building a realistic Attack on Titan-style grappling mechanic in Unreal Engine, using twin directional ropes and a physics-based swinging system. It dove deep into how boosting and swinging around a map can be made to feel responsive while staying grounded in believable physics.',
+      video: 'https://www.youtube.com/embed/GV4t41YszEE'
+    }
+  ];
+
+  jams = [
+    { title: 'Veil of the Mask', event: 'Global Game Jam 2026', engine: 'Unreal Engine', cover: 'images/Mask.jpg', link: '' },
+    { title: 'Mist Content', event: 'Halloween Game Jam 2024', engine: 'Unreal Engine', cover: 'images/MistContent.png', link: 'https://f0r6.itch.io/mist-content' },
+    { title: 'Pitch Black', event: 'April Fools Game Jam 2023', engine: 'Unity', cover: 'images/PitchBlack.png', link: 'https://f0r6.itch.io/pitch-black' }
+  ];
+
+  skills = ['Unreal Engine', 'Unity', 'C++', 'C#', 'Python', 'Blueprint Visual Scripting', 'Physics-based Interactions', 'Gameplay Mechanics Prototyping', 'Object-Oriented Programming', 'Blender (Modelling, Texturing, Sculpting)', 'Version Control (Git/Perforce/Plastic SCM)', 'Performance Profiling', 'Debugging & Troubleshooting', 'Agile / Iterative Development', 'Communication in Developer Teams'];
+
+  artFilters = ['All', 'Abstract', 'Sci-Fi', 'Fantasy', 'Sculpts', 'Roblox', 'VrChat', 'Other'];
+
+  artPieces = [
+    { src: 'images/Gallery/Abstract1.jpg', title: 'Abstract Study I', cat: 'Abstract' },
+    { src: 'images/Gallery/Abstract2.jpg', title: 'Abstract Study II', cat: 'Abstract' },
+    { src: 'images/Gallery/4PokeBalls.jpg', title: '4 Pokeballs', cat: 'Fantasy' },
+    { src: 'images/Gallery/7PokeBalls.jpg', title: '7 Pokeballs', cat: 'Fantasy' },
+    { src: 'images/Gallery/CoffeeCup.jpg', title: 'Coffee Cup', cat: 'Other' },
+    { src: 'images/Gallery/bstudy.png', title: 'Build Study', cat: 'Roblox' },
+    { src: 'images/Gallery/lothalRoom.png', title: 'Lothal Room — Star Wars', cat: 'Roblox' },
+    { src: 'images/Gallery/hoj.png', title: 'Hall Of Justice — DC Universe', cat: 'Roblox' },
+    { src: 'images/Gallery/watchtower.png', title: 'Watchtower — DC Universe', cat: 'Roblox' },
+    { src: 'images/Gallery/lothal.png', title: 'Lothal — Star Wars', cat: 'Roblox' },
+    { src: 'images/Gallery/Revan3.jpg', title: "Revan's Lightsabers — Star Wars", cat: 'Sci-Fi' },
+    { src: 'images/Gallery/Revan2.jpg', title: "Revan's Lightsaber (On) — Star Wars", cat: 'Sci-Fi' },
+    { src: 'images/Gallery/Revan1.jpg', title: 'Revan Sculpt — Star Wars', cat: 'Sci-Fi' },
+    { src: 'images/Gallery/2.png', title: 'Custom Sabers — Star Wars', cat: 'Sci-Fi' },
+    { src: 'images/Gallery/JediHolo.jpg', title: 'Jedi Holocron — Star Wars', cat: 'Sci-Fi' },
+    { src: 'images/Gallery/SithHolo.jpg', title: 'Sith Holocron — Star Wars', cat: 'Sci-Fi' },
+    { src: 'images/Gallery/TIEBack.jpg', title: 'TIE Fighter (Back) — Star Wars', cat: 'Sci-Fi' },
+    { src: 'images/Gallery/AlienOfMyOwnCreation.jpg', title: 'Alien Sculpt', cat: 'Sculpts' },
+    { src: 'images/Gallery/SculptingGreninja.jpg', title: 'Greninja Sculpt', cat: 'Sculpts' },
+    { src: 'images/Gallery/vrchatwrld.png', title: 'Cosmic Loft — VRChat', cat: 'VrChat' },
+    { src: 'images/Gallery/vrchatwrld1.png', title: 'Cosmic Loft (Interior) — VRChat', cat: 'VrChat' }
+  ];
+
+  timeline = [
+    { period: 'Sep 2022 – Jul 2026', title: 'BSc (Hons) Computer Games Application Development — Abertay University', desc: 'Graduating First Class, Dundee. Modules included Audio Programming (A+), Gameplay Mechanics Development (A) and Graphics Programming with Shaders.' },
+    { period: 'Dec 2025 – May 2026', title: 'Gameplay Programmer — Emotion-Based Gaming (Honours Project)', desc: 'Built a Python facial-emotion recognition system streaming real-time emotional signals into Unreal Engine to adapt the game environment.' },
+    { period: 'May 2022 – Dec 2025', title: 'Freelance Roblox Programmer / 3D Artist', desc: 'Ran a remote design studio with a colleague in Amsterdam, building weapons, starships, environments and game systems for international clients.' },
+    { period: 'Jan – May 2025', title: 'Gameplay Programmer — Contrary Motion (Hellcat Games)', desc: 'A team of 8 delivering a third-person shooter under industry mentorship from 4J Studios.' },
+    { period: 'Aug 2016 – Jun 2022', title: 'High School — Clydeview Academy, Gourock', desc: 'Adv. Higher in Computer Science; Highers in Physics, Maths, Biology, Art and English.' },
+    { period: 'Sep 2020 – Apr 2021', title: 'Game Design & Programming Internship — Gordon Ross (ex GTA, Lemmings)', desc: 'Designed and built a Pac-Man clone in Unity, from GDD and milestone roadmap through to a fully playable build.' }
+  ];
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.activeId !== this.state.activeId && this.state.activeId) {
+      window.scrollTo(0, 0);
+    }
+  }
+
+  componentDidMount() {
+    this._keyHandler = (e) => {
+      if (this.state.lightboxIndex == null) return;
+      const list = this.state.artFilter === 'All' ? this.artPieces : this.artPieces.filter(a => a.cat === this.state.artFilter);
+      if (e.key === 'ArrowRight') this.setState(s => ({ lightboxIndex: (s.lightboxIndex + 1) % list.length }));
+      if (e.key === 'ArrowLeft') this.setState(s => ({ lightboxIndex: (s.lightboxIndex - 1 + list.length) % list.length }));
+      if (e.key === 'Escape') this.setState({ lightboxIndex: null });
+    };
+    window.addEventListener('keydown', this._keyHandler);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('keydown', this._keyHandler);
+  }
+
+  renderVals() {
+    const motionIntensity = this.props.motionIntensity ?? 'standard';
+    const scaleMap = { minimal: 1.02, standard: 1.05, bold: 1.12 };
+    const speedMap = { minimal: '0.4s', standard: '0.3s', bold: '0.2s' };
+    const heroStyle = this.props.heroStyle ?? 'grid';
+
+    return {
+      projects: this.projects,
+      jams: this.jams,
+      artFilters: this.artFilters,
+      filteredArt: this.state.artFilter === 'All' ? this.artPieces : this.artPieces.filter(a => a.cat === this.state.artFilter),
+      showArt: this.state.showArt,
+      openArt: (e) => { e.preventDefault(); this.setState({ showArt: true }); window.scrollTo(0, 0); },
+      closeArt: () => this.setState({ showArt: false }),
+      setArtFilter: (e) => this.setState({ artFilter: e.currentTarget.dataset.filter }),
+      lightboxImage: this.state.lightboxIndex != null ? (this.state.artFilter === 'All' ? this.artPieces : this.artPieces.filter(a => a.cat === this.state.artFilter))[this.state.lightboxIndex] : null,
+      openLightbox: (e) => this.setState({ lightboxIndex: Number(e.currentTarget.dataset.index) }),
+      closeLightbox: () => this.setState({ lightboxIndex: null }),
+      stopPropagation: (e) => e.stopPropagation(),
+      nextImage: (e) => { e.stopPropagation(); const list = this.state.artFilter === 'All' ? this.artPieces : this.artPieces.filter(a => a.cat === this.state.artFilter); this.setState(s => ({ lightboxIndex: (s.lightboxIndex + 1) % list.length })); },
+      prevImage: (e) => { e.stopPropagation(); const list = this.state.artFilter === 'All' ? this.artPieces : this.artPieces.filter(a => a.cat === this.state.artFilter); this.setState(s => ({ lightboxIndex: (s.lightboxIndex - 1 + list.length) % list.length })); },
+      skills: this.skills,
+      timeline: this.timeline,
+      showGameJams: this.props.showGameJams ?? true,
+      motionScale: scaleMap[motionIntensity] ?? 1.05,
+      motionSpeed: speedMap[motionIntensity] ?? '0.3s',
+      isGridHero: heroStyle === 'grid',
+      isScanlineHero: heroStyle === 'scanlines',
+      activeProject: this.projects.find(p => p.id === this.state.activeId) || null,
+      openProject: (e) => this.setState({ activeId: e.currentTarget.dataset.id }),
+      closeProject: () => this.setState({ activeId: null })
+    };
+  }
+}
+
+</script>
+</body>
+</html>
